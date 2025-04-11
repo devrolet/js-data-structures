@@ -24,14 +24,31 @@ LinkedList.prototype.addToTail = function(value) {
     this.tail = newNode;
 }
 
-var myLL = new LinkedList();
+LinkedList.prototype.removeHead = function() {
+    if(!this.head) return null;
+    var val = this.head.value;
+    this.head = this.head.next;
+    if(this.head) this.head.prev = null;
+    else this.tail = null;
+    return val;
+}
 
-myLL.addToTail(10);
-myLL.addToTail(30);
-myLL.addToTail(50);
+LinkedList.prototype.removeTail = function() {
+    if(!this.tail) return null;
+    var val = this.tail.value;
+    this.tail = this.tail.prev;
+    if(this.tail) this.tail.next = null;
+    else this.head = null;
+    return val;
+}
 
-myLL.addToHead(100);
+var ll = new LinkedList();
 
-console.log(myLL.tail.prev);
-console.log(myLL.tail.prev.prev.prev);
+ll.addToHead('one');
+ll.addToHead('two');
+ll.addToHead('three');
+
+// ll.removeHead();
+
+console.log(ll.removeTail());
 
