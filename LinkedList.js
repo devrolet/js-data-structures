@@ -1,3 +1,16 @@
+/* 
+Constant Time - O(1): Add/remove head, Add/remove tail
+Searching LL: Linear time complexity O(n)
+
+Practical Use Cases:
+Online Gaming
+Poker, board games, dominoes
+
+Memory Management Benefits
+Data doesnt have to be stored together
+*/
+
+
 function LinkedList(value, nextNode, prevNode) {
     this.head = null;
     this.tail = null;
@@ -76,3 +89,4 @@ myLL.addToTail(4);
 myLL.addToTail(4);
 
 console.log(myLL.indexOf(4));
+
