@@ -42,13 +42,37 @@ LinkedList.prototype.removeTail = function() {
     return val;
 }
 
-var ll = new LinkedList();
+LinkedList.prototype.search = function(searchValue) {
+    var currentNode = this.head;
+    while(currentNode) {
+        if(currentNode.value === searchValue) return currentNode.value;
+        currentNode = currentNode.next;
+    }
+    return null
+}
 
-ll.addToHead('one');
-ll.addToHead('two');
-ll.addToHead('three');
+LinkedList.prototype.indexOf = function(value) {
+    var indexes = [];
+    var currentIndex = 0;
+    var currentNode = this.head;
+    while(currentNode) {
+        if(currentNode.value === value) {
+            indexes.push(currentIndex);
+        }
+        currentNode = currentNode.next;
+        currentIndex++;
+    }
+    return indexes;
+}
 
-// ll.removeHead();
+var myLL = new LinkedList();
 
-console.log(ll.removeTail());
+myLL.addToTail(1);
+myLL.addToTail(4);
+myLL.addToTail(9);
+myLL.addToTail(23);
+myLL.addToTail(15);
+myLL.addToTail(4);
+myLL.addToTail(4);
 
+console.log(myLL.indexOf(4));
