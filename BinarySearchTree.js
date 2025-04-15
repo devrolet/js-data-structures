@@ -1,3 +1,5 @@
+/* USE CASES: DICTIONARIES, PHONE BOOK, USER SEARCH */
+ 
 function BST(value) {
     this.value = value;
     this.left = null;
